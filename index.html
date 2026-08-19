@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate List &amp; Ordering — Authorised ITC Products Distributor</title>
+<meta name="description" content="Order ITC FMCG products at MRP. Aashirvaad, Sunfeast, Bingo!, YiPPee!, Classmate, Savlon, Fiama, Mangaldeep and more. Wholesale and retail supply.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   EDIT YOUR COLOURS HERE
+   ============================================================ */
+:root{
+  --ink:#14225A;          /* invoice-pen navy */
+  --ink-soft:#2C3D7D;
+  --paper:#FBFAF7;
+  --card:#FFFFFF;
+  --amber:#E8A33D;        /* marigold accent */
+  --amber-deep:#C4831F;
+  --leaf:#1E7A4F;
+  --alert:#C42B2B;
+  --slate:#5B6478;
+  --rule:#E4E1DA;
+  --rule-strong:#CFCBC2;
+
+  --display:'Archivo','Archivo Black','Helvetica Neue',Arial,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',Roboto,system-ui,sans-serif;
+  --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+
+  --pad:clamp(16px,4vw,40px);
+  --shadow:0 1px 2px rgba(20,34,90,.06),0 8px 24px rgba(20,34,90,.07);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--amber);outline-offset:2px;border-radius:3px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- TOP BAR ---------- */
+.ticker{
+  background:var(--ink);color:#EFEDE6;font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;padding:7px var(--pad);display:flex;
+  justify-content:space-between;gap:16px;flex-wrap:wrap;font-weight:500;
+}
+.ticker b{color:var(--amber);font-weight:600}
+
+.masthead{
+  position:sticky;top:0;z-index:60;background:rgba(251,250,247,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+  padding:12px var(--pad);display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.mark{display:flex;align-items:baseline;gap:9px;text-decoration:none;flex-shrink:0}
+.mark-glyph{
+  font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:-.04em;
+  background:var(--ink);color:var(--amber);padding:5px 9px;border-radius:4px;line-height:1;
+}
+.mark-name{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.035em;line-height:1}
+.mark-sub{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);font-weight:600}
+
+.searchwrap{flex:1;min-width:200px;position:relative}
+.searchwrap input{
+  width:100%;padding:11px 14px 11px 38px;border:1.5px solid var(--rule-strong);
+  border-radius:7px;background:var(--card);
+}
+.searchwrap input::placeholder{color:#9AA0AE}
+.searchwrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.45}
+
+.padbtn{
+  display:flex;align-items:center;gap:9px;background:var(--ink);color:#fff;
+  padding:10px 15px;border-radius:7px;font-weight:600;font-size:14px;
+}
+.padbtn .cnt{
+  background:var(--amber);color:var(--ink);border-radius:20px;
+  padding:1px 8px;font-size:12.5px;font-weight:700;
+}
+.padbtn.desk{display:none}
+
+/* ---------- HERO ---------- */
+.hero{padding:clamp(36px,7vw,72px) var(--pad) clamp(28px,5vw,48px);max-width:1400px;margin:0 auto}
+.eyebrow{
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-deep);
+  font-weight:700;margin-bottom:16px;
+}
+.hero h1{
+  font-family:var(--display);font-weight:900;letter-spacing:-.045em;
+  font-size:clamp(38px,7.5vw,86px);line-height:.94;max-width:16ch;
+}
+.hero h1 em{font-style:normal;color:var(--amber-deep)}
+.hero p{margin-top:20px;max-width:52ch;font-size:clamp(15px,1.6vw,17.5px);color:var(--slate)}
+
+.stats{display:flex;gap:clamp(20px,5vw,56px);margin-top:34px;flex-wrap:wrap}
+.stat .n{font-family:var(--mono);font-size:clamp(24px,3.6vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.stat .l{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--slate);margin-top:6px;font-weight:600}
+
+/* ---------- FILTER RAIL ---------- */
+.rail{
+  position:sticky;top:63px;z-index:50;background:var(--paper);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:0 var(--pad);
+}
+.rail-inner{max-width:1400px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:11px 0;scrollbar-width:none}
+.rail-inner::-webkit-scrollbar{display:none}
+.chip{
+  white-space:nowrap;padding:7px 14px;border-radius:20px;font-size:13px;font-weight:600;
+  border:1.5px solid var(--rule-strong);color:var(--slate);background:var(--card);transition:.15s;
+}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* ---------- LAYOUT ---------- */
+.stage{max-width:1400px;margin:0 auto;padding:28px var(--pad) 120px;display:grid;gap:30px}
+@media(min-width:1080px){
+  .stage{grid-template-columns:minmax(0,1fr) 336px;align-items:start}
+  .padbtn.mob{display:none}
+}
+
+.grouphead{
+  display:flex;align-items:baseline;gap:12px;margin:30px 0 10px;
+  padding-bottom:8px;border-bottom:2px solid var(--ink);
+}
+.grouphead:first-child{margin-top:0}
+.grouphead h2{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.03em}
+.grouphead .c{font-family:var(--mono);font-size:12px;color:var(--slate)}
+
+/* ---------- PRODUCT ROW ---------- */
+.row{
+  display:grid;grid-template-columns:46px minmax(0,1fr) auto;gap:14px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--bc,var(--ink));
+  border-radius:6px;padding:11px 14px 11px 12px;margin-bottom:7px;transition:.14s;
+}
+.row:hover{border-color:var(--rule-strong);border-left-color:var(--bc,var(--ink));box-shadow:var(--shadow)}
+.tile{
+  width:46px;height:46px;border-radius:5px;display:grid;place-items:center;
+  font-family:var(--display);font-weight:900;font-size:16px;color:#fff;letter-spacing:-.04em;
+  background:var(--bc,var(--ink));overflow:hidden;
+}
+.tile.shot{background:#fff;border:1px solid var(--rule)}
+.tile img{width:100%;height:100%;object-fit:contain;padding:3px;display:block}
+.meta{min-width:0}
+.meta .nm{font-weight:600;font-size:14.5px;line-height:1.3}
+.meta .sub{
+  font-family:var(--mono);font-size:11.5px;color:var(--slate);margin-top:3px;
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.meta .sub .bd{color:var(--bc,var(--ink));font-weight:600}
+.right{display:flex;align-items:center;gap:14px}
+.rate{text-align:right;line-height:1.15}
+.rate .v{font-family:var(--mono);font-weight:600;font-size:16.5px;font-variant-numeric:tabular-nums}
+.rate .t{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);font-weight:600}
+
+.add{
+  background:var(--ink);color:#fff;padding:8px 15px;border-radius:6px;
+  font-weight:600;font-size:13px;transition:.14s;
+}
+.add:hover{background:var(--ink-soft)}
+.step{display:flex;align-items:center;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden}
+.step button{width:30px;height:32px;font-size:17px;font-weight:600;color:var(--ink);line-height:1}
+.step button:hover{background:#EFEDE6}
+.step span{
+  width:34px;text-align:center;font-family:var(--mono);font-weight:600;font-size:14px;
+  border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);line-height:32px;
+}
+
+.empty{padding:56px 20px;text-align:center;color:var(--slate)}
+.empty strong{display:block;font-family:var(--display);font-size:19px;color:var(--ink);margin-bottom:7px}
+
+/* ---------- ORDER PAD (signature) ---------- */
+.pad{
+  background:var(--card);border:1px solid var(--rule-strong);border-radius:8px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+@media(min-width:1080px){.pad{position:sticky;top:118px}}
+.pad-top{
+  background:var(--ink);color:#fff;padding:13px 16px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.pad-top h3{font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:.02em;text-transform:uppercase}
+.pad-top .no{font-family:var(--mono);font-size:11px;color:var(--amber)}
+.pad-body{max-height:320px;overflow-y:auto;padding:6px 16px}
+.line{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px dotted var(--rule-strong)}
+.line:last-child{border-bottom:none}
+.line .d{flex:1;min-width:0}
+.line .d b{display:block;font-weight:600;font-size:13px;line-height:1.3}
+.line .d small{font-family:var(--mono);font-size:11px;color:var(--slate)}
+.line .amt{font-family:var(--mono);font-weight:600;font-size:13.5px;white-space:nowrap}
+.line .x{color:var(--alert);font-size:11px;font-weight:600;margin-top:3px}
+.pad-foot{padding:14px 16px;border-top:2px solid var(--ink);background:#FAF8F3}
+.tot{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px;color:var(--slate)}
+.tot span:last-child{font-family:var(--mono);color:var(--ink);font-weight:500}
+.tot.grand{
+  font-family:var(--display);font-weight:800;font-size:19px;color:var(--ink);
+  border-top:1px dashed var(--rule-strong);padding-top:11px;margin-top:11px;
+}
+.tot.grand span:last-child{font-family:var(--mono);font-weight:700;font-size:19px}
+.cta{
+  width:100%;background:var(--amber);color:var(--ink);padding:13px;border-radius:7px;
+  font-weight:700;font-size:15px;margin-top:13px;transition:.14s;
+}
+.cta:hover{background:var(--amber-deep);color:#fff}
+.cta:disabled{background:var(--rule);color:#9AA0AE;cursor:not-allowed}
+.wa{
+  width:100%;margin-top:8px;padding:11px;border-radius:7px;border:1.5px solid var(--leaf);
+  color:var(--leaf);font-weight:600;font-size:13.5px;display:block;text-align:center;text-decoration:none;
+}
+.padnote{font-size:11.5px;color:var(--slate);text-align:center;margin-top:10px;line-height:1.45}
+.padempty{padding:32px 16px;text-align:center;color:var(--slate);font-size:13.5px}
+
+/* ---------- SHEET / MODAL ---------- */
+.scrim{
+  position:fixed;inset:0;background:rgba(20,34,90,.4);z-index:90;
+  display:none;align-items:center;justify-content:center;padding:16px;
+}
+.scrim.on{display:flex}
+.sheet{
+  background:var(--paper);border-radius:10px;width:100%;max-width:520px;
+  max-height:92vh;overflow-y:auto;box-shadow:0 24px 60px rgba(20,34,90,.3);
+}
+.sheet-top{
+  position:sticky;top:0;background:var(--ink);color:#fff;padding:15px 20px;
+  display:flex;justify-content:space-between;align-items:center;z-index:2;
+}
+.sheet-top h3{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.02em}
+.sheet-top button{color:#fff;font-size:24px;line-height:1;opacity:.8}
+.sheet-body{padding:20px}
+.fgrid{display:grid;gap:13px}
+@media(min-width:520px){.fgrid.two{grid-template-columns:1fr 1fr}}
+.f label{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--slate);margin-bottom:5px}
+.f label .opt{text-transform:none;letter-spacing:0;font-weight:400;color:#9AA0AE}
+.f input,.f textarea,.f select{
+  width:100%;padding:10px 12px;border:1.5px solid var(--rule-strong);border-radius:6px;background:var(--card);
+}
+.f input:focus,.f textarea:focus,.f select:focus{border-color:var(--ink);outline:none}
+.f input[aria-invalid="true"]{border-color:var(--alert);background:#FEF6F6}
+.f .err{color:var(--alert);font-size:11.5px;margin-top:4px;font-weight:500;display:none}
+.f input[aria-invalid="true"]~.err{display:block}
+.paybox{background:var(--card);border:1px solid var(--rule);border-radius:7px;padding:14px;margin-top:18px}
+.payrow{display:flex;justify-content:space-between;font-size:13.5px;padding:4px 0;color:var(--slate)}
+.payrow span:last-child{font-family:var(--mono);color:var(--ink)}
+.payrow.big{
+  font-family:var(--display);font-weight:800;font-size:18px;color:var(--ink);
+  border-top:1px dashed var(--rule-strong);margin-top:9px;padding-top:11px;
+}
+.payrow.big span:last-child{font-family:var(--mono);font-weight:700}
+.methods{display:grid;gap:9px;margin-top:16px}
+.method{
+  display:flex;align-items:center;gap:11px;padding:13px;border:1.5px solid var(--rule-strong);
+  border-radius:7px;background:var(--card);cursor:pointer;transition:.14s;
+}
+.method:has(input:checked){border-color:var(--ink);background:#F6F5F0;box-shadow:inset 0 0 0 1px var(--ink)}
+.method input{accent-color:var(--ink);width:17px;height:17px;flex-shrink:0}
+.method .mt{font-weight:600;font-size:14px}
+.method .ms{font-size:12px;color:var(--slate);margin-top:1px}
+.banner{
+  background:#FDF6E6;border:1px solid var(--amber);border-radius:7px;padding:11px 13px;
+  font-size:12.5px;color:var(--ink);margin-top:16px;line-height:1.5;
+}
+.banner b{color:var(--amber-deep)}
+
+/* ---------- DONE ---------- */
+.done{text-align:center;padding:34px 24px}
+.tick{
+  width:64px;height:64px;border-radius:50%;background:var(--leaf);color:#fff;
+  display:grid;place-items:center;font-size:32px;margin:0 auto 18px;
+}
+.done h3{font-family:var(--display);font-weight:900;font-size:26px;letter-spacing:-.03em;margin-bottom:9px}
+.done p{color:var(--slate);font-size:14px;max-width:36ch;margin:0 auto}
+.ordbox{
+  background:var(--card);border:1px dashed var(--rule-strong);border-radius:7px;
+  padding:14px;margin:20px 0;font-family:var(--mono);
+}
+.ordbox .k{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--slate)}
+.ordbox .v{font-size:18px;font-weight:600;margin-top:3px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#D9DCE8;padding:clamp(40px,6vw,64px) var(--pad) 28px}
+.fgridw{max-width:1400px;margin:0 auto;display:grid;gap:32px}
+@media(min-width:780px){.fgridw{grid-template-columns:1.5fr 1fr 1fr}}
+footer h4{font-family:var(--display);font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:13px}
+footer p,footer li{font-size:13.5px;line-height:1.65}
+footer ul{list-style:none}
+footer a{text-decoration:none;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+.fbase{
+  max-width:1400px;margin:34px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);
+  font-size:12px;color:#9BA3BE;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.disclaim{margin-top:14px;font-size:11.5px;color:#8E96B2;line-height:1.6;max-width:70ch}
+
+/* mobile order bar */
+.mobbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:70;background:var(--ink);color:#fff;
+  padding:11px 16px;display:none;justify-content:space-between;align-items:center;
+  box-shadow:0 -6px 20px rgba(20,34,90,.22);
+}
+.mobbar.on{display:flex}
+@media(min-width:1080px){.mobbar{display:none !important}}
+.mobbar .l{font-size:12px;opacity:.75}
+.mobbar .v{font-family:var(--mono);font-weight:600;font-size:17px}
+.mobbar button{background:var(--amber);color:var(--ink);padding:10px 18px;border-radius:6px;font-weight:700;font-size:14px}
+
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <span>Authorised trade supply · <b>ITC FMCG range</b></span>
+  <span>Free delivery above <b>₹2,000</b> · Same-day dispatch before 4 PM</span>
+</div>
+
+<header class="masthead">
+  <a class="mark" href="#top">
+    <span class="mark-glyph">FM</span>
+    <span>
+      <span class="mark-name" id="brandName">Maruti Nandan Trading Company</span><br>
+      <span class="mark-sub">ITC Products · Rate List</span>
+    </span>
+  </a>
+  <div class="searchwrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <label class="sr" for="q">Search products</label>
+    <input id="q" type="search" placeholder="Search atta, biscuits, Bingo, notebook…" autocomplete="off">
+  </div>
+  <button class="padbtn mob" id="openPadTop">
+    Order pad <span class="cnt" id="cntTop">0</span>
+  </button>
+</header>
+
+<section class="hero" id="top">
+  <p class="eyebrow">Wholesale &amp; retail supply · GST invoice on every order</p>
+  <h1>Every ITC pack you stock, <em>at printed MRP.</em></h1>
+  <p>Aashirvaad, Sunfeast, Bingo!, YiPPee!, Classmate, Savlon, Fiama, Mangaldeep — one rate list, one order, one payment. Built for kirana owners, canteens and offices who are tired of chasing four different suppliers.</p>
+  <div class="stats">
+    <div class="stat"><div class="n" id="skuCount">0</div><div class="l">Live SKUs</div></div>
+    <div class="stat"><div class="n" id="brandCount">0</div><div class="l">ITC brands</div></div>
+    <div class="stat"><div class="n">₹500</div><div class="l">Minimum order</div></div>
+    <div class="stat"><div class="n">24 hr</div><div class="l">Local delivery</div></div>
+  </div>
+</section>
+
+<nav class="rail" aria-label="Filter by brand">
+  <div class="rail-inner" id="chips"></div>
+</nav>
+
+<main class="stage">
+  <div>
+    <div id="list"></div>
+  </div>
+
+  <aside class="pad" id="pad" aria-label="Order pad">
+    <div class="pad-top">
+      <h3>Order pad</h3>
+      <span class="no" id="padNo">—</span>
+    </div>
+    <div class="pad-body" id="padBody">
+      <div class="padempty">Nothing added yet.<br>Tap <strong>Add</strong> on any row to start your order.</div>
+    </div>
+    <div class="pad-foot">
+      <div class="tot"><span>Subtotal</span><span id="tSub">₹0</span></div>
+      <div class="tot"><span>Delivery</span><span id="tShip">—</span></div>
+      <div class="tot grand"><span>Payable</span><span id="tGrand">₹0</span></div>
+      <button class="cta" id="checkoutBtn" disabled>Review &amp; pay</button>
+      <a class="wa" id="waLink" href="#" target="_blank" rel="noopener">Send this order on WhatsApp</a>
+      <p class="padnote">All rates are printed MRP, inclusive of GST.<br>Minimum order ₹500.</p>
+    </div>
+  </aside>
+</main>
+
+<div class="mobbar" id="mobbar">
+  <div><div class="l"><span id="mobCnt">0</span> items</div><div class="v" id="mobTot">₹0</div></div>
+  <button id="openPadBottom">View order pad</button>
+</div>
+
+<!-- CHECKOUT -->
+<div class="scrim" id="scrim">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet-top">
+      <h3 id="sheetTitle">Delivery &amp; payment</h3>
+      <button id="closeSheet" aria-label="Close">×</button>
+    </div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="fgridw">
+    <div>
+      <h4>About the firm</h4>
+      <p>We supply the full ITC FMCG range to retailers, institutions and households across the district. Registered dealer, GST-compliant billing, and stock that moves — nothing sits in our godown long enough to go near expiry.</p>
+      <p class="disclaim">All brand names, logos and trademarks shown belong to ITC Limited. We are an independent trading firm and are not owned by or officially affiliated with ITC Limited. Tobacco products are not sold through this website.</p>
+    </div>
+    <div>
+      <h4>Reach us</h4>
+      <ul>
+        <li><a href="tel:+919999999999">+91 99999 99999</a></li>
+        <li><a href="mailto:orders@example.com">orders@example.com</a></li>
+        <li>Shop No. 14, Market Road,<br>Your City — 000000</li>
+        <li style="margin-top:9px;font-family:var(--mono);font-size:12px">GSTIN 00AAAAA0000A1Z0</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ordering</h4>
+      <ul>
+        <li>Minimum order ₹500</li>
+        <li>Free delivery above ₹2,000</li>
+        <li>Orders before 4 PM ship same day</li>
+        <li>Damaged stock replaced in 48 hrs</li>
+        <li>UPI · Cards · Net banking · COD</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbase">
+    <span>© <span id="yr"></span> Maruti Nandan Trading Company. All rights reserved.</span>
+    <span>Rates revised as per ITC price circular. E&amp;OE.</span>
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   1. YOUR SETTINGS — edit this block and nothing else to go live
+   ================================================================ */
+const CONFIG = {
+  firm:        "Maruti Nandan Trading Company",
+  phone:       "+919999999999",
+  whatsapp:    "919999999999",      // country code, no + and no spaces
+  email:       "orders@example.com",
+
+  minOrder:        500,   // ₹ — orders below this are blocked
+  deliveryFee:      60,   // ₹
+  freeDeliveryAbove:2000, // ₹
+
+  // Payment gateway — get these after your Razorpay KYC is approved
+  razorpayKeyId: "rzp_test_REPLACE_ME",
+
+  // Your backend URL. Leave blank to run in demo mode (no real money moves).
+  // Example once deployed: "https://orders-yourfirm.onrender.com"
+  apiBase: "",
+
+  codEnabled: true,
+
+  /* PRODUCT PHOTOS
+     Drop your pack shots into a folder next to this file, named by SKU:
+        images/ITC001.jpg, images/ITC002.jpg, and so on.
+     Then change photoFolder below from "" to "images/".
+     Any SKU without a photo quietly falls back to its brand tile,
+     so you can add them a few at a time. Nothing breaks. */
+  photoFolder: "",        // set to "images/" once you have photos
+  photoExt:    ".jpg"     // or ".webp" / ".png"
+};
+
+/* ================================================================
+   2. RATE LIST — verify every price against your ITC circular
+      before going live. mrp is in rupees.
+   ================================================================ */
+const BRANDS = {
+  "Aashirvaad":      "#C8102E",
+  "Sunfeast":        "#EFA00B",
+  "Bingo!":          "#E5007D",
+  "YiPPee!":         "#F26522",
+  "Candyman":        "#8E44AD",
+  "B Natural":       "#3E9E4C",
+  "Vivel":           "#7B4B94",
+  "Fiama":           "#00909E",
+  "Engage":          "#2D3E8B",
+  "Savlon":          "#0071BC",
+  "Superia":         "#009B77",
+  "Charmis":         "#D96BA0",
+  "Nimyle":          "#2E8B57",
+  "Classmate":       "#0057B8",
+  "Paperkraft":      "#4A4A4A",
+  "Mangaldeep":      "#D4711E",
+  "Sunrise":         "#D9291C",
+  "Kitchens of India":"#6B3F2A",
+  "ITC Master Chef": "#B8322B"
+};
+
+const PRODUCTS = [
+  // ---------- ATTA & STAPLES ----------
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Whole Wheat Atta", p:"1 kg",  mrp:62},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Whole Wheat Atta", p:"5 kg",  mrp:290},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Whole Wheat Atta", p:"10 kg", mrp:570},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Select Sharbati Atta", p:"5 kg", mrp:360},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Multigrain Atta", p:"5 kg",   mrp:365},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Sugar Release Control Atta", p:"5 kg", mrp:395},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Superior MP Atta", p:"5 kg",  mrp:280},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Iodised Salt", p:"1 kg",      mrp:28},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Besan", p:"500 g",            mrp:78},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Sooji / Rava", p:"500 g",     mrp:42},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Vermicelli", p:"400 g",       mrp:55},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Organic Toor Dal", p:"1 kg",  mrp:220},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Svasti Pure Cow Ghee", p:"1 L",   mrp:745},
+  {b:"Aashirvaad", c:"Atta & Staples", n:"Svasti Pure Cow Ghee", p:"500 ml",mrp:385},
+
+  // ---------- SPICES ----------
+  {b:"Aashirvaad", c:"Spices", n:"Chilli Powder", p:"100 g",     mrp:45},
+  {b:"Aashirvaad", c:"Spices", n:"Turmeric Powder", p:"100 g",   mrp:32},
+  {b:"Aashirvaad", c:"Spices", n:"Coriander Powder", p:"100 g",  mrp:30},
+  {b:"Aashirvaad", c:"Spices", n:"Garam Masala", p:"50 g",       mrp:45},
+  {b:"Sunrise",    c:"Spices", n:"Pure Sarson Powder", p:"100 g",mrp:45},
+  {b:"Sunrise",    c:"Spices", n:"Special Garam Masala", p:"100 g", mrp:85},
+
+  // ---------- BISCUITS & CAKES ----------
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Dark Fantasy Choco Fills", p:"75 g",  mrp:40},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Dark Fantasy Choco Fills", p:"300 g", mrp:145},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Dark Fantasy Coffee Fills", p:"75 g", mrp:40},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Dark Fantasy Yumfills Cake", p:"Pack of 4", mrp:50},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Marie Light Original", p:"250 g",     mrp:35},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Marie Light Oats", p:"250 g",         mrp:45},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Mom's Magic Butter Cookies", p:"200 g", mrp:60},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Mom's Magic Cashew Almond", p:"200 g",  mrp:75},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Bounce Elaichi Cream", p:"150 g",     mrp:35},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Milky Magic", p:"200 g",              mrp:35},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Glucose", p:"300 g",                  mrp:30},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Nice Coconut", p:"150 g",             mrp:25},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Bourbon Dream Cream", p:"150 g",      mrp:35},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Farmlite Digestive Oats", p:"250 g",  mrp:65},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"All Rounder Thin Potato", p:"75 g",   mrp:25},
+  {b:"Sunfeast", c:"Biscuits & Cakes", n:"Caker Choco Vanilla", p:"Pack of 6",  mrp:55},
+
+  // ---------- SNACKS ----------
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Mad Angles Achaari Masti", p:"66 g",   mrp:20},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Mad Angles Tomato Mischief", p:"66 g", mrp:20},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Mad Angles Party Pack", p:"130 g",     mrp:50},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Tedhe Medhe Masala Tadka", p:"60 g",   mrp:20},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Tedhe Medhe Chatpata Nimbu", p:"60 g", mrp:20},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Original Style Salted", p:"52 g",      mrp:20},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Original Style Cream & Onion", p:"52 g", mrp:20},
+  {b:"Bingo!", c:"Namkeen & Chips", n:"Hashtags Tomato Chatpata", p:"46 g",   mrp:20},
+
+  // ---------- NOODLES ----------
+  {b:"YiPPee!", c:"Noodles & Pasta", n:"Magic Masala Noodles", p:"60 g",        mrp:15},
+  {b:"YiPPee!", c:"Noodles & Pasta", n:"Magic Masala Noodles", p:"Pack of 4",   mrp:60},
+  {b:"YiPPee!", c:"Noodles & Pasta", n:"Saucy Masala Noodles", p:"65 g",        mrp:15},
+  {b:"YiPPee!", c:"Noodles & Pasta", n:"Power Up Atta Noodles", p:"70 g",       mrp:15},
+  {b:"YiPPee!", c:"Noodles & Pasta", n:"Mood Masala Noodles", p:"60 g",         mrp:15},
+
+  // ---------- CONFECTIONERY ----------
+  {b:"Candyman", c:"Confectionery", n:"Fantastik Choco Creme Jar", p:"100 pc", mrp:100},
+  {b:"Candyman", c:"Confectionery", n:"Toffichoo Toffee Jar", p:"100 pc",      mrp:100},
+  {b:"Candyman", c:"Confectionery", n:"Mint-o Fresh Jar", p:"100 pc",          mrp:100},
+
+  // ---------- BEVERAGES ----------
+  {b:"B Natural", c:"Beverages", n:"Mixed Fruit Juice", p:"1 L", mrp:110},
+  {b:"B Natural", c:"Beverages", n:"Litchi Juice", p:"1 L",      mrp:110},
+  {b:"B Natural", c:"Beverages", n:"Orange Juice", p:"1 L",      mrp:110},
+  {b:"B Natural", c:"Beverages", n:"Guava Juice", p:"1 L",       mrp:110},
+  {b:"Sunfeast",  c:"Beverages", n:"Wonderz Milk Chocolate", p:"180 ml", mrp:30},
+
+  // ---------- PERSONAL CARE ----------
+  {b:"Vivel",   c:"Personal Care", n:"Aloe Vera Soap", p:"100 g",            mrp:45},
+  {b:"Vivel",   c:"Personal Care", n:"Sandal Sparkle Soap", p:"100 g",       mrp:45},
+  {b:"Fiama",   c:"Personal Care", n:"Peach & Avocado Gel Bar", p:"125 g",   mrp:70},
+  {b:"Fiama",   c:"Personal Care", n:"Blackcurrant Shower Gel", p:"250 ml",  mrp:235},
+  {b:"Engage",  c:"Personal Care", n:"Urge Deodorant (Men)", p:"150 ml",     mrp:210},
+  {b:"Engage",  c:"Personal Care", n:"Blush Perfume Spray (Women)", p:"120 ml", mrp:235},
+  {b:"Savlon",  c:"Personal Care", n:"Antiseptic Liquid", p:"500 ml",        mrp:195},
+  {b:"Savlon",  c:"Personal Care", n:"Moisture Shield Handwash", p:"200 ml", mrp:99},
+  {b:"Savlon",  c:"Personal Care", n:"Glycerin Soap", p:"125 g",             mrp:55},
+  {b:"Superia", c:"Personal Care", n:"Sandal Soap", p:"100 g",               mrp:25},
+  {b:"Charmis", c:"Personal Care", n:"Deep Nourish Cream", p:"100 ml",       mrp:130},
+
+  // ---------- HOME CARE ----------
+  {b:"Nimyle",     c:"Home Care", n:"Herbal Floor Cleaner", p:"1 L",            mrp:145},
+  {b:"Nimyle",     c:"Home Care", n:"Nimwash Veg & Fruit Wash", p:"500 ml",     mrp:99},
+  {b:"Mangaldeep", c:"Home Care", n:"Rose Agarbatti", p:"150 g",                mrp:55},
+  {b:"Mangaldeep", c:"Home Care", n:"Sandal Agarbatti", p:"90 sticks",          mrp:35},
+  {b:"Mangaldeep", c:"Home Care", n:"Sambrani Dhoop Cup", p:"12 pc",            mrp:45},
+
+  // ---------- STATIONERY ----------
+  {b:"Classmate",  c:"Stationery", n:"Single Line Notebook", p:"172 pages",  mrp:55},
+  {b:"Classmate",  c:"Stationery", n:"Square Line Notebook", p:"172 pages",  mrp:55},
+  {b:"Classmate",  c:"Stationery", n:"Long Book", p:"400 pages",             mrp:165},
+  {b:"Classmate",  c:"Stationery", n:"Pulse Notebook", p:"172 pages",        mrp:70},
+  {b:"Classmate",  c:"Stationery", n:"Drawing Book", p:"36 pages",           mrp:45},
+  {b:"Classmate",  c:"Stationery", n:"Geometry Box", p:"1 unit",             mrp:130},
+  {b:"Classmate",  c:"Stationery", n:"Octane Ball Pen", p:"Pack of 5",       mrp:50},
+  {b:"Paperkraft", c:"Stationery", n:"Copier Paper A4 75 GSM", p:"500 sheets", mrp:330},
+
+  // ---------- READY TO EAT ----------
+  {b:"Kitchens of India", c:"Ready to Eat", n:"Dal Bukhara", p:"285 g",     mrp:165},
+  {b:"Kitchens of India", c:"Ready to Eat", n:"Paneer Darbari", p:"285 g",  mrp:175},
+  {b:"ITC Master Chef",   c:"Ready to Eat", n:"Chicken Nuggets (Frozen)", p:"500 g", mrp:285}
+];
+
+/* ================================================================
+   3. APP LOGIC — you shouldn't need to touch anything below
+   ================================================================ */
+PRODUCTS.forEach((p,i)=>{
+  p.id  = "ITC" + String(i+1).padStart(3,"0");
+  p.col = BRANDS[p.b] || "#14225A";
+});
+
+const CATS  = [...new Set(PRODUCTS.map(p=>p.c))];
+const inr   = n => "₹" + n.toLocaleString("en-IN");
+const $     = s => document.querySelector(s);
+const esc   = s => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+let cart   = {};             // { id: qty }
+let filter = "All";
+let query  = "";
+const orderNo = "SF-" + Date.now().toString().slice(-6);
+
+/* ---- header stats ---- */
+$("#skuCount").textContent   = PRODUCTS.length;
+$("#brandCount").textContent = new Set(PRODUCTS.map(p=>p.b)).size;
+$("#yr").textContent         = new Date().getFullYear();
+$("#brandName").textContent  = CONFIG.firm;
+$("#padNo").textContent      = orderNo;
+
+/* ---- filter chips ---- */
+(function buildChips(){
+  const rail = $("#chips");
+  ["All", ...CATS].forEach(c=>{
+    const b = document.createElement("button");
+    b.className = "chip";
+    b.textContent = c;
+    b.setAttribute("aria-pressed", c === "All");
+    b.onclick = () => { filter = c; renderChips(); renderList(); };
+    rail.appendChild(b);
+  });
+})();
+function renderChips(){
+  [...$("#chips").children].forEach(b =>
+    b.setAttribute("aria-pressed", b.textContent === filter));
+}
+
+/* ---- product list ---- */
+function visible(){
+  const q = query.trim().toLowerCase();
+  return PRODUCTS.filter(p=>{
+    if (filter !== "All" && p.c !== filter) return false;
+    if (!q) return true;
+    return (p.n + " " + p.b + " " + p.c + " " + p.p + " " + p.id).toLowerCase().includes(q);
+  });
+}
+
+function renderList(){
+  const list = $("#list");
+  const items = visible();
+
+  if (!items.length){
+    list.innerHTML = '<div class="empty"><strong>No match for that search.</strong>Try a brand name — Aashirvaad, Bingo, Classmate — or clear the box.</div>';
+    return;
+  }
+
+  let html = "", lastCat = null;
+  items.forEach(p=>{
+    if (p.c !== lastCat){
+      lastCat = p.c;
+      const n = items.filter(x=>x.c === p.c).length;
+      html += `<div class="grouphead"><h2>${esc(p.c)}</h2><span class="c">${n} SKU</span></div>`;
+    }
+    const q = cart[p.id] || 0;
+    const ctrl = q
+      ? `<div class="step"><button data-dec="${p.id}" aria-label="Reduce ${esc(p.n)}">−</button><span>${q}</span><button data-inc="${p.id}" aria-label="Add another ${esc(p.n)}">+</button></div>`
+      : `<button class="add" data-inc="${p.id}">Add</button>`;
+
+    const letter = esc(p.b.charAt(0));
+    const src = p.img || (CONFIG.photoFolder ? CONFIG.photoFolder + p.id + CONFIG.photoExt : "");
+    const tile = src
+      ? `<div class="tile shot"><img src="${esc(src)}" alt="${esc(p.b + " " + p.n)}" loading="lazy"
+           onerror="this.closest('.tile').classList.remove('shot');this.closest('.tile').textContent='${letter}'"></div>`
+      : `<div class="tile">${letter}</div>`;
+
+    html += `
+      <article class="row" style="--bc:${p.col}">
+        ${tile}
+        <div class="meta">
+          <div class="nm">${esc(p.n)}</div>
+          <div class="sub"><span class="bd">${esc(p.b)}</span><span>${esc(p.p)}</span><span>${p.id}</span></div>
+        </div>
+        <div class="right">
+          <div class="rate"><div class="v">${inr(p.mrp)}</div><div class="t">MRP</div></div>
+          ${ctrl}
+        </div>
+      </article>`;
+  });
+  list.innerHTML = html;
+}
+
+document.addEventListener("click", e=>{
+  const inc = e.target.closest("[data-inc]");
+  const dec = e.target.closest("[data-dec]");
+  const rm  = e.target.closest("[data-rm]");
+  if (inc){ cart[inc.dataset.inc] = (cart[inc.dataset.inc] || 0) + 1; sync(); }
+  if (dec){
+    const id = dec.dataset.dec;
+    cart[id] = (cart[id] || 0) - 1;
+    if (cart[id] <= 0) delete cart[id];
+    sync();
+  }
+  if (rm){ delete cart[rm.dataset.rm]; sync(); }
+});
+
+$("#q").addEventListener("input", e => { query = e.target.value; renderList(); });
+
+/* ---- totals ---- */
+function lines(){
+  return Object.entries(cart).map(([id,q])=>{
+    const p = PRODUCTS.find(x=>x.id === id);
+    return { ...p, qty:q, amt:p.mrp * q };
+  });
+}
+function totals(){
+  const L    = lines();
+  const sub  = L.reduce((s,l)=>s + l.amt, 0);
+  const ship = sub === 0 || sub >= CONFIG.freeDeliveryAbove ? 0 : CONFIG.deliveryFee;
+  return { L, sub, ship, grand: sub + ship, count: L.reduce((s,l)=>s + l.qty, 0) };
+}
+
+function sync(){
+  renderList();
+  const { L, sub, ship, grand, count } = totals();
+
+  $("#padBody").innerHTML = L.length
+    ? L.map(l=>`
+        <div class="line">
+          <div class="d">
+            <b>${esc(l.n)}</b>
+            <small>${esc(l.b)} · ${esc(l.p)} · ${inr(l.mrp)} × ${l.qty}</small>
+            <button class="x" data-rm="${l.id}">Remove</button>
+          </div>
+          <div class="amt">${inr(l.amt)}</div>
+        </div>`).join("")
+    : '<div class="padempty">Nothing added yet.<br>Tap <strong>Add</strong> on any row to start your order.</div>';
+
+  $("#tSub").textContent   = inr(sub);
+  $("#tShip").textContent  = sub === 0 ? "—" : (ship === 0 ? "Free" : inr(ship));
+  $("#tGrand").textContent = inr(grand);
+  $("#cntTop").textContent = count;
+  $("#mobCnt").textContent = count;
+  $("#mobTot").textContent = inr(grand);
+  $("#mobbar").classList.toggle("on", count > 0);
+
+  const btn = $("#checkoutBtn");
+  if (sub === 0){
+    btn.disabled = true; btn.textContent = "Review & pay";
+  } else if (sub < CONFIG.minOrder){
+    btn.disabled = true; btn.textContent = `Add ${inr(CONFIG.minOrder - sub)} more to order`;
+  } else {
+    btn.disabled = false; btn.textContent = `Review & pay ${inr(grand)}`;
+  }
+
+  const msg = L.length
+    ? `Order ${orderNo} from ${CONFIG.firm} website:\n\n` +
+      L.map(l=>`${l.qty} × ${l.n} (${l.p}) — ${inr(l.amt)}`).join("\n") +
+      `\n\nTotal: ${inr(grand)}`
+    : "Hi, I'd like to place an order.";
+  $("#waLink").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+
+/* ---- checkout sheet ---- */
+const scrim = $("#scrim");
+function openSheet(){ scrim.classList.add("on"); document.body.style.overflow = "hidden"; renderForm(); }
+function closeSheet(){ scrim.classList.remove("on"); document.body.style.overflow = ""; }
+$("#closeSheet").onclick = closeSheet;
+scrim.onclick = e => { if (e.target === scrim) closeSheet(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+$("#checkoutBtn").onclick = openSheet;
+$("#openPadTop").onclick = $("#openPadBottom").onclick = () =>
+  $("#pad").scrollIntoView({ behavior:"smooth", block:"center" });
+
+function renderForm(){
+  const { sub, ship, grand, count } = totals();
+  $("#sheetTitle").textContent = "Delivery & payment";
+  $("#sheetBody").innerHTML = `
+    <div class="fgrid">
+      <div class="fgrid two">
+        <div class="f">
+          <label for="fName">Name / shop name</label>
+          <input id="fName" autocomplete="name" placeholder="Ramesh Kirana Store">
+          <div class="err">Please enter a name.</div>
+        </div>
+        <div class="f">
+          <label for="fPhone">Mobile number</label>
+          <input id="fPhone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="9876543210">
+          <div class="err">Enter a valid 10-digit mobile number.</div>
+        </div>
+      </div>
+      <div class="f">
+        <label for="fEmail">Email <span class="opt">— for the invoice</span></label>
+        <input id="fEmail" type="email" autocomplete="email" placeholder="you@example.com">
+        <div class="err">That email doesn't look right.</div>
+      </div>
+      <div class="f">
+        <label for="fAddr">Delivery address</label>
+        <textarea id="fAddr" rows="2" placeholder="Shop no., street, landmark"></textarea>
+        <div class="err">Please enter an address.</div>
+      </div>
+      <div class="fgrid two">
+        <div class="f">
+          <label for="fCity">City</label>
+          <input id="fCity" autocomplete="address-level2">
+          <div class="err">Please enter a city.</div>
+        </div>
+        <div class="f">
+          <label for="fPin">Pincode</label>
+          <input id="fPin" inputmode="numeric" maxlength="6" autocomplete="postal-code" placeholder="000000">
+          <div class="err">Enter a valid 6-digit pincode.</div>
+        </div>
+      </div>
+      <div class="f">
+        <label for="fGst">GSTIN <span class="opt">— optional, for input credit</span></label>
+        <input id="fGst" maxlength="15" style="text-transform:uppercase" placeholder="22AAAAA0000A1Z5">
+        <div class="err">GSTIN must be 15 characters.</div>
+      </div>
+    </div>
+
+    <div class="paybox">
+      <div class="payrow"><span>${count} item${count>1?"s":""} · Order ${orderNo}</span><span>${inr(sub)}</span></div>
+      <div class="payrow"><span>Delivery</span><span>${ship === 0 ? "Free" : inr(ship)}</span></div>
+      <div class="payrow big"><span>Payable</span><span>${inr(grand)}</span></div>
+    </div>
+
+    <div class="methods">
+      <label class="method">
+        <input type="radio" name="pm" value="online" checked>
+        <span><span class="mt">Pay now — UPI, card or net banking</span>
+        <span class="ms">Secure checkout. Order confirmed the moment payment clears.</span></span>
+      </label>
+      ${CONFIG.codEnabled ? `
+      <label class="method">
+        <input type="radio" name="pm" value="cod">
+        <span><span class="mt">Cash on delivery</span>
+        <span class="ms">Pay our delivery boy. Please keep exact change ready.</span></span>
+      </label>` : ""}
+    </div>
+
+    ${!CONFIG.apiBase ? `<div class="banner"><b>Demo mode.</b> No backend is connected yet, so no real payment will be taken. Add your Razorpay key and server URL in the CONFIG block at the top of this file to accept live payments.</div>` : ""}
+
+    <button class="cta" id="payBtn">Pay ${inr(grand)}</button>
+    <p class="padnote">By placing this order you agree to our delivery and replacement terms.</p>
+  `;
+  $("#payBtn").onclick = submitOrder;
+}
+
+/* ---- validation ---- */
+function validate(){
+  const rules = [
+    ["fName",  v => v.trim().length >= 2],
+    ["fPhone", v => /^[6-9]\d{9}$/.test(v.trim())],
+    ["fEmail", v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())],
+    ["fAddr",  v => v.trim().length >= 8],
+    ["fCity",  v => v.trim().length >= 2],
+    ["fPin",   v => /^\d{6}$/.test(v.trim())],
+    ["fGst",   v => v.trim() === "" || v.trim().length === 15]
+  ];
+  let ok = true, firstBad = null;
+  rules.forEach(([id, test])=>{
+    const el = document.getElementById(id);
+    const good = test(el.value);
+    el.setAttribute("aria-invalid", !good);
+    if (!good && !firstBad) firstBad = el;
+    if (!good) ok = false;
+  });
+  if (firstBad) firstBad.focus();
+  return ok;
+}
+
+function customer(){
+  return {
+    name:  $("#fName").value.trim(),
+    phone: $("#fPhone").value.trim(),
+    email: $("#fEmail").value.trim(),
+    addr:  $("#fAddr").value.trim(),
+    city:  $("#fCity").value.trim(),
+    pin:   $("#fPin").value.trim(),
+    gstin: $("#fGst").value.trim().toUpperCase()
+  };
+}
+
+/* ---- place order ---- */
+async function submitOrder(){
+  if (!validate()) return;
+
+  const method = document.querySelector('input[name="pm"]:checked').value;
+  const { L, grand } = totals();
+  const payload = {
+    orderNo,
+    amount:   grand,
+    method,
+    customer: customer(),
+    items: L.map(l => ({ id:l.id, name:l.n, brand:l.b, pack:l.p, mrp:l.mrp, qty:l.qty, amount:l.amt }))
+  };
+
+  const btn = $("#payBtn");
+  btn.disabled = true;
+  btn.textContent = "Working…";
+
+  if (method === "cod"){
+    try {
+      if (CONFIG.apiBase){
+        await fetch(CONFIG.apiBase + "/api/cod-order", {
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify(payload)
+        });
+      }
+      showDone("cod");
+    } catch {
+      btn.disabled = false;
+      btn.textContent = "Try again";
+      alert("Couldn't reach the server. Please call us or send the order on WhatsApp.");
+    }
+    return;
+  }
+
+  // Online payment via Razorpay
+  const ok = await loadRazorpay();
+  if (!ok || !CONFIG.apiBase || CONFIG.razorpayKeyId.includes("REPLACE_ME")){
+    showDone("demo");
+    return;
+  }
+
+  try {
+    const res = await fetch(CONFIG.apiBase + "/api/create-order", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify(payload)
+    });
+    const order = await res.json();
+    if (!order.id) throw new Error("no order id");
+
+    new window.Razorpay({
+      key: CONFIG.razorpayKeyId,
+      order_id: order.id,
+      amount: order.amount,
+      currency: "INR",
+      name: CONFIG.firm,
+      description: "Order " + orderNo,
+      prefill: {
+        name:    payload.customer.name,
+        email:   payload.customer.email,
+        contact: payload.customer.phone
+      },
+      theme: { color: "#14225A" },
+      handler: async r => {
+        await fetch(CONFIG.apiBase + "/api/verify-payment", {
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify({ ...r, orderNo })
+        });
+        showDone("paid", r.razorpay_payment_id);
+      },
+      modal: {
+        ondismiss: () => {
+          btn.disabled = false;
+          btn.textContent = "Pay " + inr(grand);
+        }
+      }
+    }).open();
+  } catch (err) {
+    console.error(err);
+    btn.disabled = false;
+    btn.textContent = "Try again";
+    alert("Payment couldn't start. Please try again, or send the order on WhatsApp and pay by UPI.");
+  }
+}
+
+function loadRazorpay(){
+  return new Promise(res=>{
+    if (window.Razorpay) return res(true);
+    const s = document.createElement("script");
+    s.src = "https://checkout.razorpay.com/v1/checkout.js";
+    s.onload  = () => res(true);
+    s.onerror = () => res(false);
+    document.head.appendChild(s);
+  });
+}
+
+function showDone(kind, payId){
+  const { grand } = totals();
+  const msg = {
+    paid: "Payment received. We'll pack this and dispatch today if it's before 4 PM.",
+    cod:  "Order placed. Keep " + inr(grand) + " ready for our delivery boy.",
+    demo: "This is a demo run — no money was charged. Connect your Razorpay account to take real payments."
+  }[kind];
+
+  $("#sheetTitle").textContent = kind === "demo" ? "Demo order" : "Order confirmed";
+  $("#sheetBody").innerHTML = `
+    <div class="done">
+      <div class="tick">✓</div>
+      <h3>${kind === "demo" ? "Order captured" : "Thank you!"}</h3>
+      <p>${msg}</p>
+      <div class="ordbox">
+        <div class="k">Order number</div>
+        <div class="v">${orderNo}</div>
+        ${payId ? `<div class="k" style="margin-top:11px">Payment ID</div><div class="v" style="font-size:13px">${esc(payId)}</div>` : ""}
+      </div>
+      <p style="font-size:13px">Questions? Call <a href="tel:${CONFIG.phone}" style="color:var(--ink);font-weight:600">${CONFIG.phone}</a></p>
+      <button class="cta" style="max-width:220px;margin:22px auto 0" onclick="location.reload()">Place another order</button>
+    </div>`;
+  cart = {};
+  sync();
+}
+
+sync();
+</script>
+</body>
+</html>
